@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+<style>
+body {
+    background-image: url('/style/productFond.jpeg');
+}
+</style>
+
+<div class="container">
+    {% for product in products %}
+        <div class="row">
+            <h1 class="text-light mt-5 mb-5 pt-5 pb-5">{{product.name}} - {{product.price}}</h1>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
