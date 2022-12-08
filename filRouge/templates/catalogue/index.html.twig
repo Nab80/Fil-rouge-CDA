@@ -1,13 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}test php{% endblock %}
+{% block title %}e_Web_Game{% endblock %}
 
 {% block body %}
-<div class="container">
-    {% for category in categories %}
-        <div class="row">
-            <h1 class=" text-danger mt-5 mb-5 pt-5 pb-5">{{category.name}}</h1><br>
-        </div>
-    {% endfor %}
+{% include 'header.html.twig' %}
+<div class="container mt-4">
+    <div class="jumbotron">
+  <h1 class="display-4">Bienvenue à toi!</h1>
+  <p class="lead">Bienvenue sur e_Web_Game, le site de vente de jeux en ligne le plus populaire du moment</p>
+  <hr class="my-4">
+  <p>Des offres incroyables et le catalogue de jeux le plus vaste au monde</p>
+  <p class="lead">
+  </p>
 </div>
 {% endblock %}

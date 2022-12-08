@@ -41,6 +41,10 @@ div.container
    
 }
 
+.Paulo {
+    height : 500px;
+    width : 500px;
+}
 
 div.container a
 {
@@ -92,8 +96,11 @@ body {
     background-size: cover;
   }
 
-.lealabest{
-position: absolute;
-height: 125px;
-width: 1850px;
+.footer1{ 
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height : auto
 }
+
