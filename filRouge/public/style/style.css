@@ -63,13 +63,8 @@ div.container a
 
 .color
 {
-    position: absolute;
     background : #cfcde4;
     border-radius: 60px;
-    top: 20px;
-    left: 420px;
-    
-    
 }
 
 div.navtest a:before
@@ -101,10 +96,6 @@ body {
     height: 200px;
     
 }
-
-.company{
-    margin-bottom: -10%;
-}
  
 .footer1{ 
     position: fixed;
@@ -113,4 +104,18 @@ body {
     left: 0;
     height : 150px;  
 }
+
+
+.rpg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.txt {
+    color:yellow;
+}
+
+
 
