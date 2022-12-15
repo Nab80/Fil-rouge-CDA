@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Product;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
@@ -49,6 +50,48 @@ class AppFixtures extends Fixture
         $sc1->setParent($c1);
         $manager->persist($sc1);
 
+        //PRODUCT
+        $product1 = new Product();
+        $product1->setName("Cyberpunk")
+            ->setPrice(50);
+        $manager->persist($product1);
+
+        $product2 = new Product();
+        $product2->setName("Call of ")
+            ->setPrice(50);
+        $manager->persist($product2);
+
+        $product3 = new Product();
+        $product3->setName("Fifa")
+            ->setPrice(50);
+        $manager->persist($product3);
+
+        $product4 = new Product();
+        $product4->setName("Overwatch")
+            ->setPrice(50);
+        $manager->persist($product4);
+
+        $product5 = new Product();
+        $product5->setName("Gta 6")
+            ->setPrice(50);
+        $manager->persist($product5);
+
+        $product6 = new Product();
+        $product6->setName("Nabi trop fort")
+            ->setPrice(50);
+        $manager->persist($product6);
         $manager->flush();
+
+        $product23 = new Product();
+        $product23
+
+
+         //PRODUCTDETAIL
+     
+
+
+
+
     }
 }
+       

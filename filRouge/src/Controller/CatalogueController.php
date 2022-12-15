@@ -41,6 +41,16 @@ class CatalogueController extends AbstractController
             ]),
         ]);
     }
+
+    #[Route('/category', name: 'app_category')]
+    public function productDetail(CategoryRepository $categoryRepository): Response
+    {
+        return $this->render('catalogue/category.html.twig', [
+            'categories' => $categoryRepository->findBy([
+                "parent" => null
+            ]),
+        ]);
+    }
 /*
     #[Route('/', name: 'app_catalogue')]
     public function index(CategoryRepository $categoryRepository): Response

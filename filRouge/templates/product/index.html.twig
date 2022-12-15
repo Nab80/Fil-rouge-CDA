@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+<p>Mes produits</p>
+	<style>
+		body {
+			background-image: url('/style/product2.jpg');
+		}
+	</style>
+	<div class="container">
+		<div class="row mt-5 gy-3">
+{% for pro in product %}
+			
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="card ">
+						<img class="card-img-top" src="https://picsum.photos/398/224" alt="Card image cap">
+						<div class="card-body bg-black">
+							<p class="card-text txt">{{ pro.name }}</p>
+							<a href="{{ path("app_") }}" class="btn btn-primary mt-0 mb-3 mx-auto">{{ pro.price }}</a>
+						</div>
+					</div>
+				</div>
+{% endfor %}
+			
+		</div>
+	</div>
+    
+{% endblock %}
