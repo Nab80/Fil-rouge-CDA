@@ -118,5 +118,7 @@ body {
     color:yellow;
 }
 
-
+.category-text {
+    min-height: 240px !important;
+}
 

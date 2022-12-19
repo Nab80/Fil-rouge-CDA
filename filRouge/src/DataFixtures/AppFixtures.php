@@ -19,27 +19,27 @@ class AppFixtures extends Fixture
 
         $c2 = new Category();
         $c2->setName("FPS");
-        $c2->setDescription("Le jeu de tir à la première personne (en anglais FPS pour First-person shooter) ou en vue subjective, aussi appelé Doom-like est un genre de jeu vidéo de tir fondé sur des combats en vision subjective (« à la première personne »), c'est-à-dire que le joueur voit l'action à travers les yeux du protagoniste. ");
+        $c2->setDescription("Le jeu de tir à la première personne (en anglais FPS pour First-person shooter) ou en vue subjective, aussi appelé Doom-like est un genre de jeu vidéo de tir fondé sur des combats en vision subjective (« à la première personne »), c'est-à-dire que le joueur voit l'action à travers les yeux du protagoniste.");
         $manager->persist($c2);
 
         $c3 = new Category();
-        $c3->setName("RPG");
-        $c3->setDescription("Un jeu vidéo de rôle ou simplement jeu de rôle, couramment abrégé en RPG (sigle issu de l'anglais role playing game), est un genre de jeu vidéo s'inspirant des codes et du principe des jeux de rôle sur table. Le joueur y incarne un ou plusieurs personnages qu'il fait évoluer au fil d'une quête.");
+        $c3->setName("SPORT");
+        $c3->setDescription("Un jeu vidéo de sport est un genre de jeu vidéo qui simule un sport. Les jeux vidéo de course sont des jeux de sport très représentés, tout comme les jeux de football, basket-ball, hockey sur glace…");
         $manager->persist($c3);
 
         $c4 = new Category();
-        $c4->setName("FPS");
-        $c4->setDescription("Le jeu de tir à la première personne (en anglais FPS pour First-person shooter) ou en vue subjective, aussi appelé Doom-like est un genre de jeu vidéo de tir fondé sur des combats en vision subjective (« à la première personne »), c'est-à-dire que le joueur voit l'action à travers les yeux du protagoniste. ");
+        $c4->setName("STRATEGIE");
+        $c4->setDescription("Un jeu de stratégie peut être un jeu de société ou un jeu vidéo. Le but est de réaliser un objectif connu : augmenter sa domination spatiale, combattre un ou plusieurs ennemis sur un terrain de jeu, faire prospérer une entité… L'accent n'est pas mis sur l'adresse du joueur mais sur la planification de l'action (tactique ou stratégique).");
         $manager->persist($c4);
 
         $c5 = new Category();
-        $c5->setName("RPG");
-        $c5->setDescription("Un jeu vidéo de rôle ou simplement jeu de rôle, couramment abrégé en RPG (sigle issu de l'anglais role playing game), est un genre de jeu vidéo s'inspirant des codes et du principe des jeux de rôle sur table. Le joueur y incarne un ou plusieurs personnages qu'il fait évoluer au fil d'une quête.");
+        $c5->setName("COMBAT");
+        $c5->setDescription("Le jeu de combat (ou fighting game), parfois appelé abusivement en France VS fighting (pour versus fighting)1 ou plus familièrement Jeu de baston2, est un genre de jeu vidéo opposant un nombre limité de personnages (deux le plus souvent).");
         $manager->persist($c5);
 
         $c6 = new Category();
-        $c6->setName("FPS");
-        $c6->setDescription("Le jeu de tir à la première personne (en anglais FPS pour First-person shooter) ou en vue subjective, aussi appelé Doom-like est un genre de jeu vidéo de tir fondé sur des combats en vision subjective (« à la première personne »), c'est-à-dire que le joueur voit l'action à travers les yeux du protagoniste. ");
+        $c6->setName("PLATEFORME");
+        $c6->setDescription("Un jeu de plates-formes ou jeu de plateformes (ou platformer) est un genre de jeu vidéo, sous-genre du jeu d'action. Dans les jeux de plates-formes, le joueur contrôle un avatar qui doit sauter sur des plates-formes suspendues dans les airs et éviter des obstacles. Les environnements requièrent de devoir sauter ou grimper pour pouvoir être traversés.");
         $manager->persist($c6);
 
 
@@ -50,10 +50,29 @@ class AppFixtures extends Fixture
         $sc1->setParent($c1);
         $manager->persist($sc1);
 
+        $sc1 = new Category();
+        $sc1->setName("XBOX");
+        $sc1->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
+        $sc1->setParent($c1);
+        $manager->persist($sc1);
+
+        $sc1 = new Category();
+        $sc1->setName("NINTENDO");
+        $sc1->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
+        $sc1->setParent($c1);
+        $manager->persist($sc1);
+
+        $sc1 = new Category();
+        $sc1->setName("PC");
+        $sc1->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
+        $sc1->setParent($c1);
+        $manager->persist($sc1);
+
         //PRODUCT
         $product1 = new Product();
         $product1->setName("Cyberpunk")
-            ->setPrice(50);
+            ->setPrice(50)
+            ->addCategory($sc1);
         $manager->persist($product1);
 
         $product2 = new Product();
@@ -81,17 +100,6 @@ class AppFixtures extends Fixture
             ->setPrice(50);
         $manager->persist($product6);
         $manager->flush();
-
-        $product23 = new Product();
-        $product23
-
-
-         //PRODUCTDETAIL
-     
-
-
-
-
     }
 }
-       
+          

@@ -4,13 +4,24 @@
 
 {% block body %}
 {% include 'header.html.twig' %}
-<div class="container mt-4">
-    <div class="jumbotron">
-  <h1 class="display-4">Bienvenue à toi!</h1>
-  <p class="lead">Bienvenue sur e_Web_Game, le site de vente de jeux en ligne le plus populaire du moment</p>
-  <hr class="my-4">
-  <p>Des offres incroyables et le catalogue de jeux le plus vaste au monde</p>
-  <p class="lead">
-  </p>
-</div>
+<style>
+		body {
+			background-image: url('/style/product2.jpg');
+		}
+	</style>
+	<div class="container">
+		<div class="row mt-5 gy-3">
+			{% for category in categories %}
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="card ">
+						<img class="card-img-top" src="https://picsum.photos/398/224" alt="Card image cap">
+						<div class="card-body bg-black">
+							<p class="card-text txt">{{ category.description }}</p>
+							<a href="{{ path("app_product", { category : category.id}) }}" class="btn btn-primary mt-0 mb-3 mx-auto">{{ category.name }}</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}
