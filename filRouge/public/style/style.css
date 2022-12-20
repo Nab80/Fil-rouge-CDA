@@ -102,7 +102,7 @@ body {
     width: 100%;
     bottom: 0 !important;
     left: 0;
-    height : 150px;  
+    height : auto !important;  
     background-color: rgba(255, 255, 255, 0.712) !important; 
 }
 

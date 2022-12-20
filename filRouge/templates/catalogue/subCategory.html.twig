@@ -3,12 +3,6 @@
 {% block title %}e_Web_Game{% endblock %}
 
 {% block body %}
-{% include 'header.html.twig' %}
-<style>
-		body {
-			background-image: url('/style/product2.jpg');
-		}
-	</style>
 	<div class="container">
 		<div class="row mt-5 gy-3">
 			{% for category in categories %}
@@ -17,7 +11,7 @@
 						<img class="card-img-top" src="https://picsum.photos/398/224" alt="Card image cap">
 						<div class="card-body bg-black">
 							<p class="card-text txt">{{ category.description }}</p>
-							<a href="{{ path("app_product", { category : category.id}) }}" class="btn btn-primary mt-0 mb-3 mx-auto">{{ category.name }}</a>
+							<a href="{{ path("app_products", { genre: categorieParent.id, console: category.id }) }}" class="btn btn-primary mt-0 mb-3 mx-auto">{{ category.name }}</a>
 						</div>
 					</div>
 				</div>

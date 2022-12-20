@@ -50,34 +50,37 @@ class AppFixtures extends Fixture
         $sc1->setParent($c1);
         $manager->persist($sc1);
 
-        $sc1 = new Category();
-        $sc1->setName("XBOX");
-        $sc1->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
-        $sc1->setParent($c1);
-        $manager->persist($sc1);
+        $sc2 = new Category();
+        $sc2->setName("XBOX");
+        $sc2->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
+        $sc2->setParent($c1);
+        $manager->persist($sc2);
 
-        $sc1 = new Category();
-        $sc1->setName("NINTENDO");
-        $sc1->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
-        $sc1->setParent($c1);
-        $manager->persist($sc1);
+        $sc3 = new Category();
+        $sc3->setName("NINTENDO");
+        $sc3->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
+        $sc3->setParent($c1);
+        $manager->persist($sc3);
 
-        $sc1 = new Category();
-        $sc1->setName("PC");
-        $sc1->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
-        $sc1->setParent($c1);
-        $manager->persist($sc1);
+        $sc4 = new Category();
+        $sc4->setName("PC");
+        $sc4->setDescription("La PlayStation 5 (abrégée officiellement PS5) est la console de jeux vidéo de salon de neuvième génération développée par Sony Interactive Entertainment. Elle est commercialisée le 12 novembre 2020 aux États-Unis, au Canada, en Australie et au Japon, puis le 19 novembre en Europe et dans le reste du monde.");
+        $sc4->setParent($c1);
+        $manager->persist($sc4);
 
         //PRODUCT
         $product1 = new Product();
         $product1->setName("Cyberpunk")
             ->setPrice(50)
-            ->addCategory($sc1);
+            ->addCategory($sc1)
+            ->addCategory($c1);
         $manager->persist($product1);
 
         $product2 = new Product();
-        $product2->setName("Call of ")
-            ->setPrice(50);
+        $product2->setName("Call of")
+            ->setPrice(50)
+            ->addCategory($c2)
+            ->addCategory($sc4);
         $manager->persist($product2);
 
         $product3 = new Product();
@@ -87,7 +90,9 @@ class AppFixtures extends Fixture
 
         $product4 = new Product();
         $product4->setName("Overwatch")
-            ->setPrice(50);
+            ->setPrice(50)
+            ->addCategory($sc1)
+            ->addCategory($c2);
         $manager->persist($product4);
 
         $product5 = new Product();
@@ -99,6 +104,39 @@ class AppFixtures extends Fixture
         $product6->setName("Nabi trop fort")
             ->setPrice(50);
         $manager->persist($product6);
+        
+        $product7 = new Product();
+        $product7->setName("Cyberpunk")
+            ->setPrice(50)
+            ->addCategory($sc2)
+            ->addCategory($c1);
+        $manager->persist($product7);
+
+        $product8 = new Product();
+        $product8->setName("Cyberpunk")
+            ->setPrice(50)
+            ->addCategory($sc3)
+            ->addCategory($c1);
+        $manager->persist($product8);
+
+        $product8 = new Product();
+        $product8->setName("Call Of")
+            ->setPrice(50)
+            ->addCategory($sc1)
+            ->addCategory($c2);
+        $manager->persist($product8);
+
+        $product9 = new Product();
+        $product9->setName("Call of")
+            ->setPrice(50)
+            ->addCategory($sc2)
+            ->addCategory($c2);
+        $manager->persist($product9);
+
+
+
+
+        
         $manager->flush();
     }
 }

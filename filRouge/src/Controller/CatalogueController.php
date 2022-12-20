@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 //use App\Repository\CategoryRepository;
@@ -32,25 +33,17 @@ class CatalogueController extends AbstractController
         ]);
     }
 
-    #[Route('/subcategory', name: 'app_subcategory')]
-    public function subcategory(CategoryRepository $categoryRepository): Response
+    #[Route('/subcategory/{category}', name: 'app_subcategory')]
+    public function subcategory(CategoryRepository $categoryRepository, Category $category): Response
     {
-        return $this->render('catalogue/category.html.twig', [
+        return $this->render('catalogue/subCategory.html.twig', [
+            'categorieParent' => $category,
             'categories' => $categoryRepository->findBy([
                 "parent" => !null
             ]),
         ]);
     }
 
-    #[Route('/category', name: 'app_category')]
-    public function productDetail(CategoryRepository $categoryRepository): Response
-    {
-        return $this->render('catalogue/category.html.twig', [
-            'categories' => $categoryRepository->findBy([
-                "parent" => null
-            ]),
-        ]);
-    }
 /*
     #[Route('/', name: 'app_catalogue')]
     public function index(CategoryRepository $categoryRepository): Response

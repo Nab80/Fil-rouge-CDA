@@ -10,14 +10,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
-    #[Route('/{category}/product', name: 'app_product')]
-    public function index(Category $category): Response
+    #[Route('/products/{console}/{genre}', name: 'app_products')]
+    public function products(Category $genre, Category $console, ProductRepository $productRepository): Response
     {
-        $product = $category->getProducts();        
+        $productsTemp = $productRepository->findAll();
 
-        return $this->render('product/product.html.twig', [
-            'category' => $category,
-            'product' => $product,
+        $products = [];
+
+        foreach($productsTemp as $product) {
+            if(in_array($genre, $product->getCategory()->toArray()) && in_array($console, $product->getCategory()->toArray())) {
+                $products[] = $product;
+            }
+        }
+
+        return $this->render('product/products.html.twig', [
+            'products' => $products,
         ]);
     }
 }

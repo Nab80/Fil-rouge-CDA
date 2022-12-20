@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categories
-{% endblock %}
+{% block title %}Mes jeux{% endblock %}
 
 {% block body %}
+<p>Mes produits</p>
 	<style>
 		body {
 			background-image: url('/style/product2.jpg');
@@ -11,17 +11,19 @@
 	</style>
 	<div class="container">
 		<div class="row mt-5 gy-3">
-			{% for category in categories %}
+
+{% for product in products %}
+			
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="card ">
 						<img class="card-img-top" src="https://picsum.photos/398/224" alt="Card image cap">
 						<div class="card-body bg-black">
-							<p class="card-text txt category-text">{{ category.description }}</p>
-							<a href="{{ path("app_subcategory", {category: category.id}) }}" class="btn btn-primary mt-0 mb-3 mx-auto">{{ category.name }}</a>
+							<p class="card-text txt">{{ product.name }}</p>
+							<a href="#" class="btn btn-primary mt-0 mb-3 mx-auto">{{ product.price }}</a>
 						</div>
 					</div>
 				</div>
-			{% endfor %}
+{% endfor %}
 		</div>
 	</div>
 {% endblock %}
