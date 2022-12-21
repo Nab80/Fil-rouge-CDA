@@ -23,7 +23,7 @@ class CatalogueController extends AbstractController
         ]);
     }
 
-    #[Route('/category', name: 'app_category')]
+    #[Route('/category', name: 'app_category')] 
     public function category(CategoryRepository $categoryRepository): Response
     {
         return $this->render('catalogue/category.html.twig', [

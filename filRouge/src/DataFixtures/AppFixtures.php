@@ -70,73 +70,138 @@ class AppFixtures extends Fixture
 
         //PRODUCT
         $product1 = new Product();
-        $product1->setName("Cyberpunk")
+        $product1->setName("Cyberpunk PS5")
             ->setPrice(50)
             ->addCategory($sc1)
             ->addCategory($c1);
         $manager->persist($product1);
 
         $product2 = new Product();
-        $product2->setName("Call of")
+        $product2->setName("Call of PC")
             ->setPrice(50)
             ->addCategory($c2)
             ->addCategory($sc4);
         $manager->persist($product2);
 
         $product3 = new Product();
-        $product3->setName("Fifa")
-            ->setPrice(50);
+        $product3->setName("Fifa PC")
+            ->setPrice(50)
+            ->addCategory($c3)
+            ->addCategory($sc4);
         $manager->persist($product3);
 
         $product4 = new Product();
-        $product4->setName("Overwatch")
+        $product4->setName("Overwatch PS5")
             ->setPrice(50)
             ->addCategory($sc1)
             ->addCategory($c2);
         $manager->persist($product4);
 
         $product5 = new Product();
-        $product5->setName("Gta 6")
-            ->setPrice(50);
+        $product5->setName("Gta 6 PC")
+            ->setPrice(50)
+            ->addCategory($c1)
+            ->addCategory($sc4);
         $manager->persist($product5);
 
         $product6 = new Product();
-        $product6->setName("Nabi trop fort")
-            ->setPrice(50);
+        $product6->setName("Nabi trop fort PC")
+            ->setPrice(50)
+            ->addCategory($c4)
+            ->addCategory($sc4);
         $manager->persist($product6);
         
         $product7 = new Product();
-        $product7->setName("Cyberpunk")
+        $product7->setName("Cyberpunk XBOX")
             ->setPrice(50)
             ->addCategory($sc2)
             ->addCategory($c1);
         $manager->persist($product7);
 
         $product8 = new Product();
-        $product8->setName("Cyberpunk")
-            ->setPrice(50)
-            ->addCategory($sc3)
-            ->addCategory($c1);
-        $manager->persist($product8);
-
-        $product8 = new Product();
-        $product8->setName("Call Of")
+        $product8->setName("Call Of PS5")
             ->setPrice(50)
             ->addCategory($sc1)
             ->addCategory($c2);
         $manager->persist($product8);
 
         $product9 = new Product();
-        $product9->setName("Call of")
+        $product9->setName("Call of XBOX")
             ->setPrice(50)
             ->addCategory($sc2)
             ->addCategory($c2);
         $manager->persist($product9);
 
+        $product10 = new Product();
+        $product10->setName("Cyberpunk PC")
+            ->setPrice(50)
+            ->addCategory($sc4)
+            ->addCategory($c1);
+        $manager->persist($product10);
 
+        $product11 = new Product();
+        $product11->setName("Fifa PS5")
+            ->setPrice(50)
+            ->addCategory($sc1)
+            ->addCategory($c3);
+        $manager->persist($product11);
 
+        $product12 = new Product();
+        $product12->setName("Fifa XBOX")
+            ->setPrice(50)
+            ->addCategory($sc2)
+            ->addCategory($c3);
+        $manager->persist($product12);
+
+        $product13 = new Product();
+        $product13->setName("GTA PS5")
+            ->setPrice(50)
+            ->addCategory($sc1)
+            ->addCategory($c1);
+        $manager->persist($product13);
+
+        $product14 = new Product();
+        $product14->setName("Overwatch XBOX")
+            ->setPrice(50)
+            ->addCategory($sc2)
+            ->addCategory($c2);
+        $manager->persist($product14);
+
+        $product15 = new Product();
+        $product15->setName("Overwatch PC")
+            ->setPrice(50)
+            ->addCategory($sc4)
+            ->addCategory($c2);
+        $manager->persist($product15);
+
+        $product16 = new product();
+        $product16->setName("GTA 6 PS5")
+            ->setPrice(50)
+            ->addCategory($c1)
+            ->addCategory($sc1);
+        $manager->persist($product16);
+
+        $product17 = new product();
+        $product17->setName("GTA 6 XBOX")
+            ->setPrice(50)
+            ->addCategory($c1)
+            ->addCategory($sc2);
+        $manager->persist($product17);
+
+        $product18 = new product();
+        $product18->setName("Super Mario Nintendo")
+            ->setPrice(50)
+            ->addCategory($c6)
+            ->addCategory($sc3);
+        $manager->persist($product18);
 
         
+
+
+                  
+
+
+    
         $manager->flush();
     }
 }

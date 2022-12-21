@@ -19,7 +19,7 @@
 						<img class="card-img-top" src="https://picsum.photos/398/224" alt="Card image cap">
 						<div class="card-body bg-black">
 							<p class="card-text txt">{{ product.name }}</p>
-							<a href="#" class="btn btn-primary mt-0 mb-3 mx-auto">{{ product.price }}</a>
+							<a href="{{ path("app_product", { product: product.id }) }}" class="btn btn-primary mt-0 mb-3 mx-auto">{{ product.price }}</a>
 						</div>
 					</div>
 				</div>
