@@ -12,19 +12,24 @@ class CartController extends AbstractController
     #[Route('/cart', name: 'app_cart')]
     public function cart(SessionInterface $session): Response
     {
-        $cart = $session->get("panier', []");
-        
+        $cart = $session->get("cart', []");
+
         return $this->render('cart/index.html.twig', [
             'cart' => $cart
         ]);
     }
 
 
-    #[Route('/add', name: 'app_add')]
-    public function add(): Response
+    #[Route('/add/{id}', name: 'app_add')]
+    public function add(SessionInterface $session, Product $id): Response
     {
-        return $this->render('product/product.html.twig', [
-            'controller_name' => 'CartController',
-        ]);
+        $panier = $session->get("cart", []);
+
+        $panier[] = $id;
+
+        $session->set("cart", $panier);
+
+
+        return $this->redirect("/cart");
     }
 }
