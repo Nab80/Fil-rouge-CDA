@@ -41,7 +41,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 5)]
     private ?string $zipcode = null;
 
-    #[ORM\Column(length: 150)]
+     #[ORM\Column(length: 150)]
     private ?string $city = null;
 
     #[ORM\Column(type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'])]

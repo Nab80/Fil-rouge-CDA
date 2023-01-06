@@ -11,23 +11,25 @@
     <div class="row align-items-start">
       <div class="col-12 col-sm-8 items">
         <!--1-->
-        <div class="cartItem row align-items-start">
+        
+          {% for product in cart %}
+            <div class="cartItem row align-items-start">
           <div class="col-3 mb-2">
-            <img class="w-100" src="https://badux.co/smc/codepen/birdcage-posters.jpg" alt="art image">
+            <img class="w-100" src="https://dummyimage.com/600x400/000/fff" alt="art image">
           </div>
-          <div class="col-5 mb-2">
-            <h6 class="">Dark Art 1</h6>
-            <p class="pl-1 mb-0">20 x 24</p>
-            <p class="pl-1 mb-0">Matte Print</p>
+            <div class="col-5 mb-2">
+            <h6 class="">{{product.name}}</h6>
           </div>
           <div class="col-2">
             <p class="cartItemQuantity p-1 text-center">1</p>
           </div>
           <div class="col-2">
-            <p id="cartItem1Price">$66</p>
+            <p id="cartItem1Price">{{product.price}}</p>
           </div>
         </div>
         <hr>
+          {% endfor %}
+          
         <!--2-->
         <div class="cartItem row align-items-start">
           <div class="col-3 mb-2">
