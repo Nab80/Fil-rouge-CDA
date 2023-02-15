@@ -16,6 +16,10 @@ header, footer
     background: rgba(255, 255, 255, 0.712);
 }
 
+.jumbotron {
+  color: white;
+}
+
 header h1
 {
     color: rgb(255, 253, 253);
@@ -325,3 +329,4 @@ body {
       #product .container .row .pl4 {
         padding-left: 15px;
       }
+
