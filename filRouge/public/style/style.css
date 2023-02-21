@@ -16,7 +16,8 @@ header, footer
     background: rgba(255, 255, 255, 0.712);
 }
 
-.jumbotron {
+
+.lead{
   color: white;
 }
 
@@ -65,6 +66,7 @@ div.container a
     
 }
 
+
 .color
 {
     background : #cfcde4;
@@ -93,6 +95,7 @@ div.navtest a:hover:before
 body {
     background-image: url('/style/fond_image.jpg'); 
     background-size: cover;
+    background-repeat: repeat !important;
   }
 
 .main{
@@ -162,6 +165,8 @@ body {
     line-height: 24px;
     }
 
+
+    
     #cart {
         max-width: 1440px;
         padding-top: 60px;
