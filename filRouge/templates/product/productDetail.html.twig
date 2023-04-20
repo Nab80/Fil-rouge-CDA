@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ product.name }} - eWebGame Store{% endblock %}
+{% block title %}{{ product.name }} - eWebproduct Store{% endblock %}
 
 {% block body %}
     <div class="row">
@@ -11,21 +11,21 @@
             <h1>{{ product.name }}</h1>
             <p class="lead">{{ product.description }}</p>
             <ul>
-                <li>Genre: {{ game.genre }}</li>
-                <li>Developer: {{ game.developer }}</li>
-                <li>Publisher: {{ game.publisher }}</li>
-                <li>Release Date: {{ game.release_date|date('M d, Y') }}</li>
-                <li>Metascore: {{ game.metascore }}</li>
+                <li>Genre: {{ product.genre }}</li>
+                <li>Developer: {{ product.developer }}</li>
+                <li>Publisher: {{ product.publisher }}</li>
+                <li>Release Date: {{ product.release_date|date('m, d, y') }}</li>
+                <li>Metascore: {{ product.metascore }}</li>
             </ul>
             <h2>Gameplay</h2>
-            <p>{{ game.gameplay }}</p>
+            <p>{{ product.gameplay }}</p>
             <h2>Visuals and Sound</h2>
-            <p>{{ game.visuals_sound }}</p>
+            <p>{{ product.visuals_sound }}</p>
             <h2>Platform and Compatibility</h2>
-            <p>{{ game.platform_compatibility }}</p>
+            <p>{{ product.platform_compatibility }}</p>
             <h2>Price and Availability</h2>
             <p>{{ product.price }}</p>
-            <a href="{{ path('cart_add', { 'id': game.id }) }}" class="btn btn-primary">Add to Cart</a>
+            <a href="{{ path('cart_add', { 'id': product.id }) }}" class="btn btn-primary">Add to Cart</a>
         </div>
     </div>
 {% endblock %}
