@@ -32,7 +32,6 @@ class RegistrationFormType extends AbstractType
             ->add('address')
             ->add('zipcode')
             ->add('city')
-            ->add('created_at')
             // ->add('is_verified')
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
